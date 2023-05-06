@@ -1,0 +1,11 @@
+name = "rfiles"
+main = "src/index.ts"
+compatibility_date = "2023-05-02"
+
+account_id = "<your_account_id>"
+workers_dev = true
+
+[[r2_buckets]]
+binding = "FILES_BUCKET"
+bucket_name = "files"
+preview_bucket_name = "preview-files"
