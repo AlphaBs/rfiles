@@ -26,14 +26,14 @@ export interface CfReqContext {
 const router = Router()
 	.all('/objects/*', objectsRouter.handle)
 	.all('*', async (req: IRequest, ctx: CfReqContext) => {
-		console.log("not_matching_any_routers")
+		console.log("not_matching_any_routers");
 		return new NotFoundResponse("can't find endpoint");
 	});
 
 const errorHandler = (error: any) => {
-	console.log("uncaughted_error")
-	console.log(error)
-	return new ErrorResponse(error, 500); 
+	console.log("uncaughted_error");
+	console.log(error?.stack ?? error);
+	return new ErrorResponse(error.toString(), 500); 
 }
 
 export default {
