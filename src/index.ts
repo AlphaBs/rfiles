@@ -12,16 +12,8 @@ import { IRequest, Router } from 'itty-router'
 import objectsRouter from './objects'
 import { ErrorResponse } from './responses/ErrorResponse'
 import { NotFoundResponse } from './responses/NotFoundResponse'
+import { Env, CfReqContext } from './environment';
 
-export interface Env {
-	FILES_BUCKET: R2Bucket
-}
-
-export interface CfReqContext {
-	request: Request,
-	env: Env,
-	context: ExecutionContext
-}
 
 const router = Router()
 	.all('/objects/*', objectsRouter.handle)

@@ -9,3 +9,6 @@ workers_dev = true
 binding = "FILES_BUCKET"
 bucket_name = "files"
 preview_bucket_name = "preview-files"
+
+[[vars]]
+CLIENT_SECRET = ""

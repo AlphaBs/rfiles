@@ -1,9 +1,10 @@
 import { IRequest, Router } from "itty-router";
 import { encodeBase64, hex, normalizeHex } from "./util";
-import { CfReqContext } from ".";
+import { Env, CfReqContext } from "./environment";
 import { MethodNotAllowedResponse } from "./responses/MethodNotAllowedResponse";
 import { ErrorResponse } from "./responses/ErrorResponse";
 import { NotFoundResponse } from "./responses/NotFoundResponse";
+import { filterUnauthorized } from "./auth";
 
 const router = Router({ base: '/objects' });
 
@@ -63,7 +64,8 @@ router.get('/:hash', async (req: IRequest, ctx: CfReqContext): Promise<Response>
 	});
 })
 
-router.put('/:hash', async (req: IRequest, ctx: CfReqContext): Promise<Response> => {
+router.put('/:hash', filterUnauthorized,
+	async (req: IRequest, ctx: CfReqContext): Promise<Response> => {
 	const hash = normalizeHex(req.params.hash);
 	const key = hashToKey(hash);
 
@@ -107,7 +109,8 @@ router.put('/:hash', async (req: IRequest, ctx: CfReqContext): Promise<Response>
 	}
 })
 
-router.delete('/:hash', async (req: IRequest, ctx: CfReqContext): Promise<Response> => {
+router.delete('/:hash', filterUnauthorized,
+	async (req: IRequest, ctx: CfReqContext): Promise<Response> => {
 	const key = hashToKey(req.params.hash);
 	await ctx.env.FILES_BUCKET.delete(key)
 	return new Response(null, {
