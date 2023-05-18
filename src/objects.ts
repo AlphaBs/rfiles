@@ -35,14 +35,37 @@ function createObjectHeaders(object: R2Object): Headers {
 }
 
 router.get('/', async (req: IRequest, ctx: CfReqContext): Promise<Response> => {
+	function objectToKey(object: R2Object): any {
+		return keyToHash(object.key);
+	}
+
+	function objectToDetail(object: R2Object): any {
+		return {
+			"uploaded": object.uploaded,
+			"size": object.size,
+			"md5": keyToHash(object.key)
+		};
+	}
+
+	let objectMapper: (object: R2Object) => any;
+	const returnMode = req.query.return ?? "md5";
+	if (returnMode === "md5") {
+		objectMapper = objectToKey;
+	}
+	else if (returnMode === "object") {
+		objectMapper = objectToDetail;
+	}
+	else {
+		return new ErrorResponse("bad_request", 400);
+	}
+
 	const objects = await ctx.env.FILES_BUCKET.list({
-		limit: 100,
 		prefix: keyPrefix
 	});
 
 	return new Response(
 		JSON.stringify({
-			objects: objects.objects.map(object => keyToHash(object.key))
+			objects: objects.objects.map(objectMapper)
 		}));
 })
 
@@ -66,57 +89,74 @@ router.get('/:hash', async (req: IRequest, ctx: CfReqContext): Promise<Response>
 
 router.put('/:hash', filterUnauthorized,
 	async (req: IRequest, ctx: CfReqContext): Promise<Response> => {
-	const hash = normalizeHex(req.params.hash);
-	const key = hashToKey(hash);
+		const hash = normalizeHex(req.params.hash);
+		const key = hashToKey(hash);
 
-	let object = await ctx.env.FILES_BUCKET.head(key);
-	if (object) {
-		const overwrite = req.query.overwrite;
-		if (overwrite === 'true') {
+		async function uploadObject(): Promise<Response> {
+			try {
+				const object = await ctx.env.FILES_BUCKET.put(key, req.body, {
+					md5: hash
+				});
+
+				if (!object.checksums.md5 ||
+					hash !== hex(object.checksums.md5)) {
+					return new ErrorResponse("mismatch_hash", 400);
+				}
+
+				return createSuccessfulResponse(object);
+			}
+			catch (e: any) {
+				if (e?.name === "TypeError") {
+					return new ErrorResponse(e?.message, 400);
+				}
+				else {
+					throw e;
+				}
+			}
+		}
+
+		function getObject(): Promise<R2Object | null> {
+			return ctx.env.FILES_BUCKET.head(key);
+		}
+
+		function createSuccessfulResponse(object: R2Object) {
 			return new Response(null, {
 				status: 204,
 				headers: createObjectHeaders(object)
 			});
+		}
+
+		const exists = req.query.exists ?? "error";
+		if (exists === "overwrite") {
+			return await uploadObject();
+		}
+		else if (exists === "skip") {
+			const object = await getObject();
+			if (object)
+				return createSuccessfulResponse(object);
+			else
+				return await uploadObject();
+		}
+		else if (exists === "error") {
+			const object = await getObject();
+			if (object)
+				return new ErrorResponse("object_already_exists", 403);
+			else
+				return await uploadObject();
 		}
 		else {
-			return new ErrorResponse("object_already_exists", 403);
+			return new ErrorResponse("bad_request", 400);
 		}
-	}
-	else {
-		try {
-			object = await ctx.env.FILES_BUCKET.put(key, req.body, {
-				md5: hash
-			});
-
-			if (!object.checksums.md5 ||
-				hash !== hex(object.checksums.md5)) {
-				return new ErrorResponse("mismatch_hash", 400);
-			}
-
-			return new Response(null, {
-				status: 204,
-				headers: createObjectHeaders(object)
-			});
-		}
-		catch (e: any) {
-			if (e?.name === "TypeError") {
-				return new ErrorResponse(e?.message, 400);
-			}
-			else {
-				throw e;
-			}
-		}
-	}
-})
+	})
 
 router.delete('/:hash', filterUnauthorized,
 	async (req: IRequest, ctx: CfReqContext): Promise<Response> => {
-	const key = hashToKey(req.params.hash);
-	await ctx.env.FILES_BUCKET.delete(key)
-	return new Response(null, {
-		status: 204
-	});
-})
+		const key = hashToKey(req.params.hash);
+		await ctx.env.FILES_BUCKET.delete(key)
+		return new Response(null, {
+			status: 204
+		});
+	})
 
 router.all('/:hash', async (req: IRequest, ctx: CfReqContext): Promise<Response> => {
 	if (req.method === 'HEAD') {
