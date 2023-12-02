@@ -1,4 +1,2 @@
-PUT {{host}}/objects/{{hash}}?exists=error
+POST {{host}}/objects/{{hash}}
 X-Client-Secret: {{client_secret}}
-file,uploadfile;
-HTTP 204

@@ -4,6 +4,7 @@ import { Env, CfReqContext } from "./environment";
 import { MethodNotAllowedResponse } from "./responses/MethodNotAllowedResponse";
 import { ErrorResponse } from "./responses/ErrorResponse";
 import { NotFoundResponse } from "./responses/NotFoundResponse";
+import { AwsClient } from "aws4fetch";
 import { filterUnauthorized } from "./auth";
 
 const router = Router({ base: '/objects' });
@@ -34,19 +35,26 @@ function createObjectHeaders(object: R2Object): Headers {
 	return headers;
 }
 
+function objectToKey(object: R2Object): any {
+	return keyToHash(object.key);
+}
+
+function objectToDetail(object: R2Object): any {
+	return {
+		"uploaded": object.uploaded,
+		"size": object.size,
+		"md5": keyToHash(object.key)
+	};
+}
+
+function createJsonHeaders(): Headers {
+	const headers = new Headers();
+	headers.set("Content-Type", "application/json");
+	return headers;
+}
+
+// list all objects the server stores
 router.get('/', async (req: IRequest, ctx: CfReqContext): Promise<Response> => {
-	function objectToKey(object: R2Object): any {
-		return keyToHash(object.key);
-	}
-
-	function objectToDetail(object: R2Object): any {
-		return {
-			"uploaded": object.uploaded,
-			"size": object.size,
-			"md5": keyToHash(object.key)
-		};
-	}
-
 	let objectMapper: (object: R2Object) => any;
 	const returnMode = req.query.return ?? "md5";
 	if (returnMode === "md5") {
@@ -64,9 +72,9 @@ router.get('/', async (req: IRequest, ctx: CfReqContext): Promise<Response> => {
 	});
 
 	return new Response(
-		JSON.stringify({
-			objects: objects.objects.map(objectMapper)
-		}));
+		JSON.stringify(objects.objects.map(objectMapper)), {
+		headers: createJsonHeaders()
+	});
 })
 
 router.all('/', async (req: IRequest, ctx: CfReqContext): Promise<Response> => {
@@ -74,6 +82,36 @@ router.all('/', async (req: IRequest, ctx: CfReqContext): Promise<Response> => {
 		"method_not_allowed", ["GET"])
 })
 
+router.post('/query', async (req: IRequest, ctx: CfReqContext): Promise<Response> => {
+	const reqObj: any = await ctx.request.json()
+	if (!reqObj)
+		return new ErrorResponse("bad request", 400)
+
+	const reqHashes = reqObj.hashes;
+	if (!Array.isArray(reqHashes))
+		return new ErrorResponse("bad request", 400)
+	if (reqHashes.length > 1000)
+		return new ErrorResponse("too large request", 413)
+
+	const objects: Array<R2Object> = []
+	for (let reqHash of reqHashes) {
+		if (typeof reqHash !== "string")
+			return new ErrorResponse("bad request", 400)
+
+		const key = hashToKey(reqHash)
+		const fileObj = await ctx.env.FILES_BUCKET.head(key)
+		if (fileObj) {
+			objects.push(fileObj)
+		}
+	}
+
+	return new Response(
+		JSON.stringify(objects.map(objectToDetail)), {
+		headers: createJsonHeaders()
+	})
+})
+
+// download
 router.get('/:hash', async (req: IRequest, ctx: CfReqContext): Promise<Response> => {
 	const key = hashToKey(req.params.hash)
 	const object = await ctx.env.FILES_BUCKET.get(key);
@@ -87,68 +125,54 @@ router.get('/:hash', async (req: IRequest, ctx: CfReqContext): Promise<Response>
 	});
 })
 
-router.put('/:hash', filterUnauthorized,
+// upload
+router.post('/:hash', filterUnauthorized,
 	async (req: IRequest, ctx: CfReqContext): Promise<Response> => {
 		const hash = normalizeHex(req.params.hash);
 		const key = hashToKey(hash);
-
-		async function uploadObject(): Promise<Response> {
-			try {
-				const object = await ctx.env.FILES_BUCKET.put(key, req.body, {
-					md5: hash
-				});
-
-				if (!object.checksums.md5 ||
-					hash !== hex(object.checksums.md5)) {
-					return new ErrorResponse("mismatch_hash", 400);
-				}
-
-				return createSuccessfulResponse(object);
-			}
-			catch (e: any) {
-				if (e?.name === "TypeError") {
-					return new ErrorResponse(e?.message, 400);
-				}
-				else {
-					throw e;
-				}
-			}
+		
+		let unmodifiedSince: Date;
+		const exists = req.query.exists ? req.query.exists : "error";
+		if (exists === "error") {
+			// the server only accept the request when the object does not exists
+			// minimum If-Unmodified-Since value of R2
+			unmodifiedSince = new Date(1632844800000);
 		}
-
-		function getObject(): Promise<R2Object | null> {
-			return ctx.env.FILES_BUCKET.head(key);
-		}
-
-		function createSuccessfulResponse(object: R2Object) {
-			return new Response(null, {
-				status: 204,
-				headers: createObjectHeaders(object)
-			});
-		}
-
-		const exists = req.query.exists ?? "error";
-		if (exists === "overwrite") {
-			return await uploadObject();
-		}
-		else if (exists === "skip") {
-			const object = await getObject();
-			if (object)
-				return createSuccessfulResponse(object);
-			else
-				return await uploadObject();
-		}
-		else if (exists === "error") {
-			const object = await getObject();
-			if (object)
-				return new ErrorResponse("object_already_exists", 403);
-			else
-				return await uploadObject();
+		else if (exists === "overwrite") {
+			// even the object already exists the server would accept the request only once
+			unmodifiedSince = new Date();
 		}
 		else {
 			return new ErrorResponse("bad_request", 400);
 		}
+
+		const r2 = new AwsClient({
+			accessKeyId: ctx.env.S3_ACCESS_KEY,
+			secretAccessKey: ctx.env.S3_SECRET_ACCESS_KEY
+		})
+
+		const url = new URL(ctx.env.S3_ENDPOINT);
+		url.pathname = key;
+		url.searchParams.set("X-Amz-Expires", "600"); // 10 minutes
+		const signed = await r2.sign(new Request(url, {
+			method: "PUT"
+		}),
+			{
+				aws: { signQuery: true },
+				headers: {
+					"If-Unmodified-Since": unmodifiedSince.toUTCString(),
+					"Content-MD5": hash,
+				}
+			});
+
+		return new Response(JSON.stringify({
+			method: signed.method,
+			url: signed.url,
+			headers: signed.headers
+		}));
 	})
 
+// delete
 router.delete('/:hash', filterUnauthorized,
 	async (req: IRequest, ctx: CfReqContext): Promise<Response> => {
 		const key = hashToKey(req.params.hash);
@@ -158,6 +182,7 @@ router.delete('/:hash', filterUnauthorized,
 		});
 	})
 
+// head
 router.all('/:hash', async (req: IRequest, ctx: CfReqContext): Promise<Response> => {
 	if (req.method === 'HEAD') {
 		const key = hashToKey(req.params.hash);

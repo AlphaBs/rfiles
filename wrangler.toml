@@ -2,13 +2,10 @@ name = "rfiles"
 main = "src/index.ts"
 compatibility_date = "2023-05-02"
 
-account_id = "<your_account_id>"
-workers_dev = true
+account_id = "5af6495dfb1eac16b73762f2ffe27095"
+workers_dev = false
 
 [[r2_buckets]]
 binding = "FILES_BUCKET"
 bucket_name = "files"
 preview_bucket_name = "preview-files"
-
-[[vars]]
-CLIENT_SECRET = ""
