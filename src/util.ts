@@ -34,3 +34,12 @@ export function encodeBase64(arrayBuffer: ArrayBuffer): string {
     }
     return btoa( binary );
 }
+
+export function hexToBase64(hexstring: string): string {
+	const matched = hexstring.match(/\w{2}/g)
+	if (!matched)
+		return ""
+    return btoa(matched.map(a => {
+        return String.fromCharCode(parseInt(a, 16));
+    }).join(""));
+}

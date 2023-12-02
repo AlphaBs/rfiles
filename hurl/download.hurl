@@ -1,2 +1,2 @@
-GET {{host}}/objects/{{hash}}
+GET {{host}}/md5/{{hash}}
 HTTP 200

@@ -9,14 +9,16 @@
  */
 
 import { IRequest, Router } from 'itty-router'
-import objectsRouter from './objects'
+import bulkRoutes from './routes/bulkRoutes'
+import md5Routes from './routes/md5Routes'
 import { ErrorResponse } from './responses/ErrorResponse'
 import { NotFoundResponse } from './responses/NotFoundResponse'
 import { Env, CfReqContext } from './environment';
 
 
 const router = Router()
-	.all('/objects/*', objectsRouter.handle)
+	.all('*', bulkRoutes.handle)
+	.all('*', md5Routes.handle)
 	.all('*', async (req: IRequest, ctx: CfReqContext) => {
 		console.log("not_matching_any_routers");
 		return new NotFoundResponse("can't find endpoint");
@@ -29,15 +31,8 @@ const errorHandler = (error: any) => {
 }
 
 export default {
-	fetch: (request: Request, 
-		    env: Env, 
-		    context: ExecutionContext): 
-			Promise<Response> => {
-		const cfReq: CfReqContext = {
-			request, env, context
-		}
-		return router
-			.handle(request, cfReq)
+	fetch: (request: Request, env: Env, context: ExecutionContext): Promise<Response> => 
+		router
+			.handle(request, { request, env, context })
 			.catch(errorHandler)
-		}
 };
