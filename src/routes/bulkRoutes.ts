@@ -65,7 +65,7 @@ function parseQueryRequest(req: any): Array<string> | ErrorResponse {
 		return new ErrorResponse("too_large_request", 413)
 
 	const items: Array<string> = []
-	for (let item in reqMd5) {
+	for (let item of reqMd5) {
 		if (typeof item !== "string")
 			return new ErrorResponse("bad_request", 400)
 		items.push(item)
