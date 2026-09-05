@@ -1,5 +1,5 @@
 import { AwsClient } from 'aws4fetch';
-import { hexToBase64 } from '../../lib/encoding';
+import { hexToBase64, normalizeHash } from '../../lib/encoding';
 import type { Env } from '../../types/env';
 import { objectKey } from './repository';
 import type { UploadInstruction } from './schemas';
@@ -30,5 +30,5 @@ export async function createUploadInstruction(
     headers,
     aws: { signQuery: true, allHeaders: true },
   });
-  return { method: 'PUT', url: signed.url, headers };
+  return { md5: normalizeHash(hash), method: 'PUT', url: signed.url, headers };
 }

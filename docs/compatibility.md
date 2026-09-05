@@ -110,6 +110,15 @@ values, including keys, versions, ETags, HTTP/custom metadata, and checksums.
 It does not map these to `/query` metadata. Missing inputs each receive an upload
 instruction, including duplicates. Operations remain sequential.
 
+## Upload response consumer contract
+
+Upload instructions from single-file POST and `/sync` include `md5`, the lowercase
+32-character hexadecimal digest, alongside `method`, `url`, and `headers`.
+RFiles.NET 0.0.4 maps this field to `RFilesUploadRequest.Hash`; omitting it yields null
+and FishBucket rejects the sync action. The Git baseline omitted this field, so
+baseline snapshots alone did not capture the consuming client's requirement.
+This additive correction leaves stored keys, checksum headers, and signatures unchanged.
+
 ## Storage and signing
 
 - Keys remain `objects/<normalized-hash>` for valid MD5 hashes. Normalization

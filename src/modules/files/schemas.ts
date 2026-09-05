@@ -14,6 +14,7 @@ export const metadataSchema = v.object({
   md5: v.string(),
 });
 export const uploadSchema = v.object({
+  md5: hashSchema,
   method: v.literal('PUT'),
   url: v.string(),
   headers: v.object({ 'If-Unmodified-Since': v.string(), 'Content-MD5': v.string() }),

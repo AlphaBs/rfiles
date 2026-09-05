@@ -39,6 +39,7 @@ describe('persistent key and signing behavior', () => {
       S3_ENDPOINT: 'https://test-account.r2.cloudflarestorage.com/files?custom=1',
     });
     const url = new URL(instruction.url);
+    expect(instruction.md5).toBe(HASH);
     expect(url.pathname).toBe(`/filesobjects/${HASH}`);
     expect(url.searchParams.get('custom')).toBe('1');
     expect(url.searchParams.get('X-Amz-Date')).toBe('20240102T030405Z');
