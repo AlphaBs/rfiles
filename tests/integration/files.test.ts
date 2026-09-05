@@ -70,7 +70,7 @@ describe('Worker with a real local R2 binding', () => {
     expect(await response.json()).toEqual([metadata, metadata]);
   });
 
-  it('preserves native R2 serialization in sync and signs only missing entries', async () => {
+  it('returns deployed metadata contract in sync and signs only missing entries', async () => {
     const stored = await env.FILES_BUCKET.head(key);
     const response = await request('/sync', {
       method: 'POST',
@@ -80,10 +80,13 @@ describe('Worker with a real local R2 binding', () => {
     expect(response.status).toBe(200);
     const result = await response.json<{
       objects: unknown[];
-      uploads: { method: string; url: string; headers: Record<string, string> }[];
+      uploads: { md5: string; method: string; url: string; headers: Record<string, string> }[];
     }>();
-    expect(result.objects).toEqual([JSON.parse(JSON.stringify(stored))]);
+    expect(result.objects).toEqual([
+      { uploaded: stored!.uploaded.toISOString(), size: 4, md5: HASH },
+    ]);
     expect(result.uploads).toHaveLength(1);
+    expect(result.uploads[0].md5).toBe(OTHER_HASH);
     expect(result.uploads[0].method).toBe('PUT');
     expect(result.uploads[0].headers).toEqual({
       'Content-MD5': '1B2M2Y8AsgTpgAmY7PhCfg==',
@@ -152,7 +155,8 @@ describe('Worker with a real local R2 binding', () => {
     });
     expect(response.status).toBe(200);
     expect(response.headers.get('content-type')).toBe('application/json');
-    const instruction = await response.json<{ url: string }>();
+    const instruction = await response.json<{ md5: string; url: string }>();
+    expect(instruction.md5).toBe(HASH);
     expect(new URL(instruction.url).pathname).toBe(`/files/${key}`);
     expect(JSON.stringify(await env.FILES_BUCKET.head(key))).toBe(before);
   });

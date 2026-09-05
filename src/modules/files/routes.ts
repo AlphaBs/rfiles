@@ -244,7 +244,7 @@ fileRoutes.post(
     security,
     requestBody: bulkBody,
     description:
-      'objects contains native serialized R2 metadata, unlike /query. Missing inputs each produce an upload instruction; duplicates are retained.',
+      'objects contains { uploaded, size, md5 } metadata, matching /query. Missing inputs each produce an upload instruction; duplicates are retained.',
     responses: {
       200: {
         description: 'Existing R2 objects and signed upload requests.',

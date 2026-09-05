@@ -1,6 +1,6 @@
 # Compatibility contract
 
-The baseline is commit `4376e99d1858682f27ac414ad014e53f7bf93759` on `main`.
+The Git baseline is commit `4376e99d1858682f27ac414ad014e53f7bf93759` on `main`.
 The contract snapshots were recorded by running the original implementation in
 workerd before replacing its router. They capture response status, headers, body,
 R2 calls, and complete signed URLs with a fixed clock. Only the approved HTTP response, routing, and MD5 validation changes below have been applied to those
@@ -93,6 +93,16 @@ continue allowing legacy hash strings. Valid MD5 keys and signatures are unchang
 - No CORS middleware, redirect, or automatic request
   Content-Type validation is added.
 
+## Recovered production contract
+
+The pre-refactor deployment `db946a0b-94d2-47a1-80fe-09b3de480139`
+(2024-11-02) differed from Git main: upload instructions included `md5`, and
+`/sync.objects` contained `{ uploaded, size, md5 }` metadata. Both fields are
+required by RFiles.NET 0.0.4 and FishBucket. These deployed response shapes take
+precedence over the Git baseline and are now covered by regression assertions.
+The prior deployment processed bulk lookups concurrently; current processing
+remains sequential and retains input order.
+
 ## Bulk behavior
 
 `/query` and `/sync` parse JSON regardless of Content-Type and accept an `md5`
@@ -105,10 +115,18 @@ or empty JSON returns 400 `bad_request`. Unexpected exceptions return 500
 `internal_server_error`, without including the error's string form.
 
 `/query` returns metadata only for existing files. `/sync` returns
-`{ objects, uploads }`, where `objects` contains native serialized `R2Object`
-values, including keys, versions, ETags, HTTP/custom metadata, and checksums.
-It does not map these to `/query` metadata. Missing inputs each receive an upload
-instruction, including duplicates. Operations remain sequential.
+`{ objects, uploads }`, where `objects` contains `{ uploaded, size, md5 }`,
+matching `/query` and the recovered production contract. Missing inputs each
+receive an upload instruction, including duplicates. Operations remain sequential.
+
+## Upload response consumer contract
+
+Upload instructions from single-file POST and `/sync` include `md5`, the lowercase
+32-character hexadecimal digest, alongside `method`, `url`, and `headers`.
+RFiles.NET 0.0.4 maps this field to `RFilesUploadRequest.Hash`; omitting it yields null
+and FishBucket rejects the sync action. The Git baseline omitted this field, so
+baseline snapshots alone did not capture the consuming client's requirement.
+This additive correction leaves stored keys, checksum headers, and signatures unchanged.
 
 ## Storage and signing
 

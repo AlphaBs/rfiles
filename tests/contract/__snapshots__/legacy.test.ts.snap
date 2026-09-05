@@ -716,7 +716,7 @@ exports[`legacy HTTP and storage contract > 'POST /md5 method matrix' 1`] = `
 
 exports[`legacy HTTP and storage contract > 'POST /md5/c09a30415c41bf3e39c58b7347e…' 1`] = `
 {
-  "body": "{"method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/c09a30415c41bf3e39c58b7347e8ab1a?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=86c47f7128fbce963f859c55e1977e8d446537a858237474e9c6c5298ea9a787","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"wJowQVxBvz45xYtzR+irGg=="}}",
+  "body": "{"md5":"c09a30415c41bf3e39c58b7347e8ab1a","method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/c09a30415c41bf3e39c58b7347e8ab1a?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=86c47f7128fbce963f859c55e1977e8d446537a858237474e9c6c5298ea9a787","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"wJowQVxBvz45xYtzR+irGg=="}}",
   "headers": {
     "content-type": "application/json",
   },
@@ -1458,7 +1458,7 @@ exports[`legacy HTTP and storage contract > 'sync permissive checksum uses origi
 
 exports[`legacy HTTP and storage contract > 'sync raw R2 metadata and upload signa…' 1`] = `
 {
-  "body": "{"objects":[{"key":"objects/c09a30415c41bf3e39c58b7347e8ab1a","version":"fixture-version","size":4,"etag":"c09a30415c41bf3e39c58b7347e8ab1a","httpEtag":"\\"c09a30415c41bf3e39c58b7347e8ab1a\\"","uploaded":"2023-11-01T01:02:03.000Z","httpMetadata":{"contentType":"application/octet-stream","cacheControl":"public, max-age=60"},"customMetadata":{"originalName":"uploadfile"},"checksums":{"md5":{}},"storageClass":"Standard"}],"uploads":[{"method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/d41d8cd98f00b204e9800998ecf8427e?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=2a805a7482d4c2a7e8068eb3429dc5c60f26c3d1b6e351ae18a0452b094ed0b6","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"1B2M2Y8AsgTpgAmY7PhCfg=="}},{"method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/d41d8cd98f00b204e9800998ecf8427e?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=2a805a7482d4c2a7e8068eb3429dc5c60f26c3d1b6e351ae18a0452b094ed0b6","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"1B2M2Y8AsgTpgAmY7PhCfg=="}}]}",
+  "body": "{"objects":[{"uploaded":"2023-11-01T01:02:03.000Z","size":4,"md5":"c09a30415c41bf3e39c58b7347e8ab1a"}],"uploads":[{"md5":"d41d8cd98f00b204e9800998ecf8427e","method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/d41d8cd98f00b204e9800998ecf8427e?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=2a805a7482d4c2a7e8068eb3429dc5c60f26c3d1b6e351ae18a0452b094ed0b6","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"1B2M2Y8AsgTpgAmY7PhCfg=="}},{"md5":"d41d8cd98f00b204e9800998ecf8427e","method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/d41d8cd98f00b204e9800998ecf8427e?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=2a805a7482d4c2a7e8068eb3429dc5c60f26c3d1b6e351ae18a0452b094ed0b6","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"1B2M2Y8AsgTpgAmY7PhCfg=="}}]}",
   "headers": {
     "content-type": "application/json",
   },
@@ -1500,7 +1500,7 @@ exports[`legacy HTTP and storage contract > 'sync unauthorized before parsing' 1
 
 exports[`legacy HTTP and storage contract > 'sync uppercase checksum uses original…' 1`] = `
 {
-  "body": "{"objects":[],"uploads":[{"method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/d41d8cd98f00b204e9800998ecf8427e?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=2a805a7482d4c2a7e8068eb3429dc5c60f26c3d1b6e351ae18a0452b094ed0b6","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"1B2M2Y8AsgTpgAmY7PhCfg=="}}]}",
+  "body": "{"objects":[],"uploads":[{"md5":"d41d8cd98f00b204e9800998ecf8427e","method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/d41d8cd98f00b204e9800998ecf8427e?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=2a805a7482d4c2a7e8068eb3429dc5c60f26c3d1b6e351ae18a0452b094ed0b6","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"1B2M2Y8AsgTpgAmY7PhCfg=="}}]}",
   "headers": {
     "content-type": "application/json",
   },
@@ -1584,7 +1584,7 @@ exports[`legacy HTTP and storage contract > 'unknown nested endpoint' 1`] = `
 
 exports[`legacy HTTP and storage contract > 'upload duplicate exists: first wins' 1`] = `
 {
-  "body": "{"method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/c09a30415c41bf3e39c58b7347e8ab1a?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=83ed8bcff7fb6e06be602e67d9983cf17eb7925c942c0ecc4fd4bbc9e02dce15","headers":{"If-Unmodified-Since":"Tue, 02 Jan 2024 03:04:05 GMT","Content-MD5":"wJowQVxBvz45xYtzR+irGg=="}}",
+  "body": "{"md5":"c09a30415c41bf3e39c58b7347e8ab1a","method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/c09a30415c41bf3e39c58b7347e8ab1a?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=83ed8bcff7fb6e06be602e67d9983cf17eb7925c942c0ecc4fd4bbc9e02dce15","headers":{"If-Unmodified-Since":"Tue, 02 Jan 2024 03:04:05 GMT","Content-MD5":"wJowQVxBvz45xYtzR+irGg=="}}",
   "headers": {
     "content-type": "application/json",
   },
@@ -1632,7 +1632,7 @@ exports[`legacy HTTP and storage contract > 'upload forbidden' 1`] = `
 
 exports[`legacy HTTP and storage contract > 'upload overwrite signature' 1`] = `
 {
-  "body": "{"method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/c09a30415c41bf3e39c58b7347e8ab1a?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=83ed8bcff7fb6e06be602e67d9983cf17eb7925c942c0ecc4fd4bbc9e02dce15","headers":{"If-Unmodified-Since":"Tue, 02 Jan 2024 03:04:05 GMT","Content-MD5":"wJowQVxBvz45xYtzR+irGg=="}}",
+  "body": "{"md5":"c09a30415c41bf3e39c58b7347e8ab1a","method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/c09a30415c41bf3e39c58b7347e8ab1a?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=83ed8bcff7fb6e06be602e67d9983cf17eb7925c942c0ecc4fd4bbc9e02dce15","headers":{"If-Unmodified-Since":"Tue, 02 Jan 2024 03:04:05 GMT","Content-MD5":"wJowQVxBvz45xYtzR+irGg=="}}",
   "headers": {
     "content-type": "application/json",
   },
@@ -1664,7 +1664,7 @@ exports[`legacy HTTP and storage contract > 'upload permissive hash' 1`] = `
 
 exports[`legacy HTTP and storage contract > 'upload signature' 1`] = `
 {
-  "body": "{"method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/c09a30415c41bf3e39c58b7347e8ab1a?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=86c47f7128fbce963f859c55e1977e8d446537a858237474e9c6c5298ea9a787","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"wJowQVxBvz45xYtzR+irGg=="}}",
+  "body": "{"md5":"c09a30415c41bf3e39c58b7347e8ab1a","method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/c09a30415c41bf3e39c58b7347e8ab1a?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=86c47f7128fbce963f859c55e1977e8d446537a858237474e9c6c5298ea9a787","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"wJowQVxBvz45xYtzR+irGg=="}}",
   "headers": {
     "content-type": "application/json",
   },
@@ -1696,7 +1696,7 @@ exports[`legacy HTTP and storage contract > 'upload unauthorized' 1`] = `
 
 exports[`legacy HTTP and storage contract > 'upload unknown exists means error' 1`] = `
 {
-  "body": "{"method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/c09a30415c41bf3e39c58b7347e8ab1a?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=86c47f7128fbce963f859c55e1977e8d446537a858237474e9c6c5298ea9a787","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"wJowQVxBvz45xYtzR+irGg=="}}",
+  "body": "{"md5":"c09a30415c41bf3e39c58b7347e8ab1a","method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/c09a30415c41bf3e39c58b7347e8ab1a?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=86c47f7128fbce963f859c55e1977e8d446537a858237474e9c6c5298ea9a787","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"wJowQVxBvz45xYtzR+irGg=="}}",
   "headers": {
     "content-type": "application/json",
   },
@@ -1712,7 +1712,7 @@ exports[`legacy HTTP and storage contract > 'upload unknown exists means error' 
 
 exports[`legacy HTTP and storage contract > 'upload uppercase signature' 1`] = `
 {
-  "body": "{"method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/c09a30415c41bf3e39c58b7347e8ab1a?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=86c47f7128fbce963f859c55e1977e8d446537a858237474e9c6c5298ea9a787","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"wJowQVxBvz45xYtzR+irGg=="}}",
+  "body": "{"md5":"c09a30415c41bf3e39c58b7347e8ab1a","method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/c09a30415c41bf3e39c58b7347e8ab1a?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=86c47f7128fbce963f859c55e1977e8d446537a858237474e9c6c5298ea9a787","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"wJowQVxBvz45xYtzR+irGg=="}}",
   "headers": {
     "content-type": "application/json",
   },

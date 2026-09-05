@@ -72,7 +72,9 @@ describe('generated OpenAPI and Scalar', () => {
       content: { 'application/json': { schema: { properties: { error: { type: 'string' } } } } },
     });
     expect(spec.paths!['/md5/{hash}']!.post!.responses!['200']).toMatchObject({
-      content: { 'application/json': { schema: { required: ['method', 'url', 'headers'] } } },
+      content: {
+        'application/json': { schema: { required: ['md5', 'method', 'url', 'headers'] } },
+      },
     });
     expect(spec.paths!['/sync']!.post!.responses!['200']).toMatchObject({
       content: {
@@ -80,7 +82,7 @@ describe('generated OpenAPI and Scalar', () => {
           schema: {
             properties: {
               objects: {
-                items: { properties: { key: { type: 'string' }, httpEtag: { type: 'string' } } },
+                items: { required: ['uploaded', 'size', 'md5'] },
               },
             },
           },
