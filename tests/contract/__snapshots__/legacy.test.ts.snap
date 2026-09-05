@@ -1,0 +1,1761 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`legacy HTTP and storage contract > '/query array body' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > '/query empty body' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > '/query malformed body' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > '/query missing body' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > '/query nonstring body' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > '/query null body' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > '/query scalar body' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > '/query string body' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > '/sync array body' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > '/sync empty body' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > '/sync malformed body' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > '/sync missing body' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > '/sync nonstring body' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > '/sync null body' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > '/sync scalar body' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > '/sync string body' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'DELETE /md5 method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'DELETE /md5/c09a30415c41bf3e39c58b734…' 1`] = `
+{
+  "body": "",
+  "headers": {},
+  "status": 204,
+  "storage": {
+    "delete": [
+      [
+        "objects/c09a30415c41bf3e39c58b7347e8ab1a",
+      ],
+    ],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'DELETE /query method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'DELETE /sync method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'DELETE /unknown method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'GET /md5 method matrix' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'GET /md5/c09a30415c41bf3e39c58b7347e8…' 1`] = `
+{
+  "body": "test",
+  "headers": {
+    "cache-control": "public, max-age=60",
+    "content-length": "4",
+    "content-md5": "wJowQVxBvz45xYtzR+irGg==",
+    "content-type": "application/octet-stream",
+    "last-modified": "Wed, 01 Nov 2023 01:02:03 GMT",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [
+      [
+        "objects/c09a30415c41bf3e39c58b7347e8ab1a",
+      ],
+    ],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'GET /query method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'GET /sync method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'GET /unknown method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'HEAD /md5 method matrix' 1`] = `
+{
+  "body": "",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'HEAD /md5/c09a30415c41bf3e39c58b7347e…' 1`] = `
+{
+  "body": "",
+  "headers": {
+    "cache-control": "public, max-age=60",
+    "content-length": "4",
+    "content-md5": "wJowQVxBvz45xYtzR+irGg==",
+    "content-type": "application/octet-stream",
+    "last-modified": "Wed, 01 Nov 2023 01:02:03 GMT",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [
+      [
+        "objects/c09a30415c41bf3e39c58b7347e8ab1a",
+      ],
+    ],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'HEAD /query method matrix' 1`] = `
+{
+  "body": "",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'HEAD /sync method matrix' 1`] = `
+{
+  "body": "",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'HEAD /unknown method matrix' 1`] = `
+{
+  "body": "",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'HEAD' 1`] = `
+{
+  "body": "",
+  "headers": {
+    "cache-control": "public, max-age=60",
+    "content-length": "4",
+    "content-md5": "wJowQVxBvz45xYtzR+irGg==",
+    "content-type": "application/octet-stream",
+    "last-modified": "Wed, 01 Nov 2023 01:02:03 GMT",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [
+      [
+        "objects/c09a30415c41bf3e39c58b7347e8ab1a",
+      ],
+    ],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'OPTIONS /md5 method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'OPTIONS /md5/c09a30415c41bf3e39c58b73…' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'OPTIONS /query method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'OPTIONS /sync method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'OPTIONS /unknown method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'PATCH /md5 method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'PATCH /md5/c09a30415c41bf3e39c58b7347…' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'PATCH /query method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'PATCH /sync method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'PATCH /unknown method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'POST /md5 method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'POST /md5/c09a30415c41bf3e39c58b7347e…' 1`] = `
+{
+  "body": "{"method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/c09a30415c41bf3e39c58b7347e8ab1a?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=86c47f7128fbce963f859c55e1977e8d446537a858237474e9c6c5298ea9a787","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"wJowQVxBvz45xYtzR+irGg=="}}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'POST /query method matrix' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'POST /sync method matrix' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'POST /unknown method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'PUT /md5 method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'PUT /md5/c09a30415c41bf3e39c58b7347e8…' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'PUT /query method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'PUT /sync method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'PUT /unknown method matrix' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'delete forbidden' 1`] = `
+{
+  "body": "{"error":"forbidden"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 403,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'delete missing object' 1`] = `
+{
+  "body": "",
+  "headers": {},
+  "status": 204,
+  "storage": {
+    "delete": [
+      [
+        "objects/d41d8cd98f00b204e9800998ecf8427e",
+      ],
+    ],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'delete unauthorized' 1`] = `
+{
+  "body": "{"error":"unauthorized"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 401,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'delete' 1`] = `
+{
+  "body": "",
+  "headers": {},
+  "status": 204,
+  "storage": {
+    "delete": [
+      [
+        "objects/c09a30415c41bf3e39c58b7347e8ab1a",
+      ],
+    ],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'double trailing slash' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'download double trailing slash' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'download trailing slash' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'download' 1`] = `
+{
+  "body": "test",
+  "headers": {
+    "cache-control": "public, max-age=60",
+    "content-length": "4",
+    "content-md5": "wJowQVxBvz45xYtzR+irGg==",
+    "content-type": "application/octet-stream",
+    "last-modified": "Wed, 01 Nov 2023 01:02:03 GMT",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [
+      [
+        "objects/c09a30415c41bf3e39c58b7347e8ab1a",
+      ],
+    ],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'duplicate return mode' 1`] = `
+{
+  "body": "["c09a30415c41bf3e39c58b7347e8ab1a","old/abc"]",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [
+      [
+        {
+          "prefix": "objects",
+        },
+      ],
+    ],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'encoded query parameter' 1`] = `
+{
+  "body": "["c09a30415c41bf3e39c58b7347e8ab1a","old/abc"]",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [
+      [
+        {
+          "prefix": "objects",
+        },
+      ],
+    ],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'legacy punctuation normalization' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'list HEAD' 1`] = `
+{
+  "body": "",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [
+      [
+        {
+          "prefix": "objects",
+        },
+      ],
+    ],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'list hashes' 1`] = `
+{
+  "body": "["c09a30415c41bf3e39c58b7347e8ab1a","old/abc"]",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [
+      [
+        {
+          "prefix": "objects",
+        },
+      ],
+    ],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'list metadata' 1`] = `
+{
+  "body": "[{"uploaded":"2023-11-01T01:02:03.000Z","size":4,"md5":"c09a30415c41bf3e39c58b7347e8ab1a"},{"uploaded":"2023-11-01T01:02:03.000Z","size":4,"md5":"old/abc"}]",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [
+      [
+        {
+          "prefix": "objects",
+        },
+      ],
+    ],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'list wrong method' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'malformed percent encoding' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'missing HEAD' 1`] = `
+{
+  "body": "",
+  "headers": {},
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [
+      [
+        "objects/d41d8cd98f00b204e9800998ecf8427e",
+      ],
+    ],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'missing download' 1`] = `
+{
+  "body": "{"error":"object_not_found"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [
+      [
+        "objects/d41d8cd98f00b204e9800998ecf8427e",
+      ],
+    ],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'missing return mode' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'object OPTIONS remains unsupported' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'object PATCH remains unsupported' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'object PUT remains unsupported' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'old documented md5 mode is rejected' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'percent encoded hash is decoded' 1`] = `
+{
+  "body": "test",
+  "headers": {
+    "cache-control": "public, max-age=60",
+    "content-length": "4",
+    "content-md5": "wJowQVxBvz45xYtzR+irGg==",
+    "content-type": "application/octet-stream",
+    "last-modified": "Wed, 01 Nov 2023 01:02:03 GMT",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [
+      [
+        "objects/c09a30415c41bf3e39c58b7347e8ab1a",
+      ],
+    ],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'query accepts unrelated fields' 1`] = `
+{
+  "body": "[]",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'query empty list' 1`] = `
+{
+  "body": "[]",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'query ignores Content-Type' 1`] = `
+{
+  "body": "[{"uploaded":"2023-11-01T01:02:03.000Z","size":4,"md5":"c09a30415c41bf3e39c58b7347e8ab1a"}]",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [
+      [
+        "objects/c09a30415c41bf3e39c58b7347e8ab1a",
+      ],
+    ],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'query includes duplicates and omits m…' 1`] = `
+{
+  "body": "[{"uploaded":"2023-11-01T01:02:03.000Z","size":4,"md5":"c09a30415c41bf3e39c58b7347e8ab1a"},{"uploaded":"2023-11-01T01:02:03.000Z","size":4,"md5":"c09a30415c41bf3e39c58b7347e8ab1a"}]",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [
+      [
+        "objects/c09a30415c41bf3e39c58b7347e8ab1a",
+      ],
+      [
+        "objects/d41d8cd98f00b204e9800998ecf8427e",
+      ],
+      [
+        "objects/c09a30415c41bf3e39c58b7347e8ab1a",
+      ],
+    ],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'query too large before invalid items' 1`] = `
+{
+  "body": "{"error":"too_large_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 413,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'query trailing slash' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'sync empty list' 1`] = `
+{
+  "body": "{"objects":[],"uploads":[]}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'sync forbidden before parsing' 1`] = `
+{
+  "body": "{"error":"forbidden"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 403,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'sync permissive checksum uses origina…' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'sync raw R2 metadata and upload signa…' 1`] = `
+{
+  "body": "{"objects":[{"key":"objects/c09a30415c41bf3e39c58b7347e8ab1a","version":"fixture-version","size":4,"etag":"c09a30415c41bf3e39c58b7347e8ab1a","httpEtag":"\\"c09a30415c41bf3e39c58b7347e8ab1a\\"","uploaded":"2023-11-01T01:02:03.000Z","httpMetadata":{"contentType":"application/octet-stream","cacheControl":"public, max-age=60"},"customMetadata":{"originalName":"uploadfile"},"checksums":{"md5":{}},"storageClass":"Standard"}],"uploads":[{"method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/d41d8cd98f00b204e9800998ecf8427e?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=2a805a7482d4c2a7e8068eb3429dc5c60f26c3d1b6e351ae18a0452b094ed0b6","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"1B2M2Y8AsgTpgAmY7PhCfg=="}},{"method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/d41d8cd98f00b204e9800998ecf8427e?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=2a805a7482d4c2a7e8068eb3429dc5c60f26c3d1b6e351ae18a0452b094ed0b6","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"1B2M2Y8AsgTpgAmY7PhCfg=="}}]}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [
+      [
+        "objects/c09a30415c41bf3e39c58b7347e8ab1a",
+      ],
+      [
+        "objects/d41d8cd98f00b204e9800998ecf8427e",
+      ],
+      [
+        "objects/d41d8cd98f00b204e9800998ecf8427e",
+      ],
+    ],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'sync unauthorized before parsing' 1`] = `
+{
+  "body": "{"error":"unauthorized"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 401,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'sync uppercase checksum uses original…' 1`] = `
+{
+  "body": "{"objects":[],"uploads":[{"method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/d41d8cd98f00b204e9800998ecf8427e?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=2a805a7482d4c2a7e8068eb3429dc5c60f26c3d1b6e351ae18a0452b094ed0b6","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"1B2M2Y8AsgTpgAmY7PhCfg=="}}]}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [
+      [
+        "objects/d41d8cd98f00b204e9800998ecf8427e",
+      ],
+    ],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'trailing slash' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'unknown bulk method' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'unknown endpoint' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'unknown nested endpoint' 1`] = `
+{
+  "body": "{"error":"can't find endpoint"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 404,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'upload duplicate exists: first wins' 1`] = `
+{
+  "body": "{"method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/c09a30415c41bf3e39c58b7347e8ab1a?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=83ed8bcff7fb6e06be602e67d9983cf17eb7925c942c0ecc4fd4bbc9e02dce15","headers":{"If-Unmodified-Since":"Tue, 02 Jan 2024 03:04:05 GMT","Content-MD5":"wJowQVxBvz45xYtzR+irGg=="}}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'upload empty secret' 1`] = `
+{
+  "body": "{"error":"unauthorized"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 401,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'upload forbidden' 1`] = `
+{
+  "body": "{"error":"forbidden"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 403,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'upload overwrite signature' 1`] = `
+{
+  "body": "{"method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/c09a30415c41bf3e39c58b7347e8ab1a?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=83ed8bcff7fb6e06be602e67d9983cf17eb7925c942c0ecc4fd4bbc9e02dce15","headers":{"If-Unmodified-Since":"Tue, 02 Jan 2024 03:04:05 GMT","Content-MD5":"wJowQVxBvz45xYtzR+irGg=="}}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'upload permissive hash' 1`] = `
+{
+  "body": "{"error":"bad_request"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 400,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'upload signature' 1`] = `
+{
+  "body": "{"method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/c09a30415c41bf3e39c58b7347e8ab1a?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=86c47f7128fbce963f859c55e1977e8d446537a858237474e9c6c5298ea9a787","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"wJowQVxBvz45xYtzR+irGg=="}}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'upload unauthorized' 1`] = `
+{
+  "body": "{"error":"unauthorized"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 401,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'upload unknown exists means error' 1`] = `
+{
+  "body": "{"method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/c09a30415c41bf3e39c58b7347e8ab1a?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=86c47f7128fbce963f859c55e1977e8d446537a858237474e9c6c5298ea9a787","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"wJowQVxBvz45xYtzR+irGg=="}}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'upload uppercase signature' 1`] = `
+{
+  "body": "{"method":"PUT","url":"https://test-account.r2.cloudflarestorage.com/files/objects/c09a30415c41bf3e39c58b7347e8ab1a?X-Amz-Expires=600&X-Amz-Date=20240102T030405Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test-access-key%2F20240102%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=content-md5%3Bhost%3Bif-unmodified-since&X-Amz-Signature=86c47f7128fbce963f859c55e1977e8d446537a858237474e9c6c5298ea9a787","headers":{"If-Unmodified-Since":"Tue, 28 Sep 2021 16:00:00 GMT","Content-MD5":"wJowQVxBvz45xYtzR+irGg=="}}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > 'uppercase hash' 1`] = `
+{
+  "body": "test",
+  "headers": {
+    "cache-control": "public, max-age=60",
+    "content-length": "4",
+    "content-md5": "wJowQVxBvz45xYtzR+irGg==",
+    "content-type": "application/octet-stream",
+    "last-modified": "Wed, 01 Nov 2023 01:02:03 GMT",
+  },
+  "status": 200,
+  "storage": {
+    "delete": [],
+    "get": [
+      [
+        "objects/c09a30415c41bf3e39c58b7347e8ab1a",
+      ],
+    ],
+    "head": [],
+    "list": [],
+  },
+}
+`;
+
+exports[`legacy HTTP and storage contract > preserves unexpected storage error responses 1`] = `
+{
+  "body": "{"error":"internal_server_error"}",
+  "headers": {
+    "content-type": "application/json",
+  },
+  "status": 500,
+}
+`;
