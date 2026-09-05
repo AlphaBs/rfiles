@@ -70,7 +70,7 @@ describe('Worker with a real local R2 binding', () => {
     expect(await response.json()).toEqual([metadata, metadata]);
   });
 
-  it('preserves native R2 serialization in sync and signs only missing entries', async () => {
+  it('returns deployed metadata contract in sync and signs only missing entries', async () => {
     const stored = await env.FILES_BUCKET.head(key);
     const response = await request('/sync', {
       method: 'POST',
@@ -82,7 +82,9 @@ describe('Worker with a real local R2 binding', () => {
       objects: unknown[];
       uploads: { md5: string; method: string; url: string; headers: Record<string, string> }[];
     }>();
-    expect(result.objects).toEqual([JSON.parse(JSON.stringify(stored))]);
+    expect(result.objects).toEqual([
+      { uploaded: stored!.uploaded.toISOString(), size: 4, md5: HASH },
+    ]);
     expect(result.uploads).toHaveLength(1);
     expect(result.uploads[0].md5).toBe(OTHER_HASH);
     expect(result.uploads[0].method).toBe('PUT');

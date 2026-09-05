@@ -21,21 +21,8 @@ export const uploadSchema = v.object({
 });
 export const errorSchema = v.object({ error: v.string() });
 
-// /sync exposes R2Object's native JSON shape, unlike /query and return=object.
-export const storedObjectSchema = v.looseObject({
-  key: v.string(),
-  version: v.string(),
-  size: v.number(),
-  etag: v.string(),
-  httpEtag: v.string(),
-  uploaded: v.pipe(v.string(), v.isoTimestamp()),
-  httpMetadata: v.optional(v.record(v.string(), v.unknown())),
-  customMetadata: v.optional(v.record(v.string(), v.string())),
-  checksums: v.record(v.string(), v.unknown()),
-  storageClass: v.optional(v.string()),
-});
 export const syncResponseSchema = v.object({
-  objects: v.array(storedObjectSchema),
+  objects: v.array(metadataSchema),
   uploads: v.array(uploadSchema),
 });
 export type UploadInstruction = v.InferOutput<typeof uploadSchema>;

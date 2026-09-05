@@ -82,7 +82,7 @@ describe('generated OpenAPI and Scalar', () => {
           schema: {
             properties: {
               objects: {
-                items: { properties: { key: { type: 'string' }, httpEtag: { type: 'string' } } },
+                items: { required: ['uploaded', 'size', 'md5'] },
               },
             },
           },

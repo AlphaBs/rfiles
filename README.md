@@ -41,13 +41,13 @@ Wrangler는 로컬에서 R2를 에뮬레이션합니다. 서명된 업로드 URL
 | POST   | `/md5/:hash?exists=error` | 서명된 PUT 업로드 요청 생성                                | `x-client-secret` |
 | DELETE | `/md5/:hash`              | 파일 삭제. 파일이 없어도 204 반환                          | `x-client-secret` |
 | POST   | `/query`                  | 존재하는 해시의 메타데이터 조회                            | 불필요            |
-| POST   | `/sync`                   | 기존 R2 객체와 누락된 해시의 업로드 요청 반환              | `x-client-secret` |
+| POST   | `/sync`                   | 기존 파일 메타데이터와 누락된 해시의 업로드 요청 반환      | `x-client-secret` |
 
 두 일괄 처리 엔드포인트(`/query`, `/sync`)는 `{ "md5": ["..."] }` 형식의 본문을 받으며,
 문자열 항목을 최대 1000개까지 허용합니다.
 
 업로드 안내는 `{ md5, method, url, headers }` 형식입니다. `md5`는 소문자 32자리 해시이며,
-`/sync`의 `uploads` 항목에도 포함됩니다. RFiles.NET은 이 필드로 업로드 대상 해시를 식별합니다.
+`/sync`의 `uploads` 항목에도 포함됩니다. `objects`는 `/query`와 같은 `{ uploaded, size, md5 }` 배열입니다. RFiles.NET은 이 필드로 업로드 대상 해시를 식별합니다.
 
 파일을 업로드하려면 먼저 `/md5/:hash`로 POST 요청을 보냅니다.
 응답의 `url`에 파일 바이트를 PUT으로 전송하고, 응답에 포함된 `Content-MD5`와

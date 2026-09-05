@@ -59,6 +59,6 @@ export class FileService {
       if (object) objects.push(object);
       else uploads.push(await createUploadInstruction(hash, 'error', this.env));
     }
-    return { objects, uploads };
+    return { objects: objects.map(objectMetadata), uploads };
   }
 }
